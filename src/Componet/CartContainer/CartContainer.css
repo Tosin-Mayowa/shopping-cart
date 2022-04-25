@@ -1,0 +1,9 @@
+.Cart-Total{
+    display:flex;
+    justify-content: space-around;
+}
+
+.Horizontal{
+    width:85%;
+    height:2px;
+}
