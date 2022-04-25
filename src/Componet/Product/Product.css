@@ -1,5 +1,5 @@
 .Product {
-	width: 150px;
+	width: 120px;
 	padding: 10px;
 	margin: 1rem;
 	box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
@@ -16,7 +16,7 @@
 .Product-title {
 	margin-bottom: 1rem;
 	font-weight: bold;
-	font-size: 0.8rem;
+	font-size: 15px;
 }
 
 .Pokecard-image {
@@ -34,4 +34,8 @@
 .Product:hover {
 	transform: scale(1.25);
 	opacity: 0.7;
+}
+.Btn {
+	font-size: 10px;
+	font-weight: 500;
 }
