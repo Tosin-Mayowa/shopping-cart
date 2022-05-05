@@ -28,8 +28,8 @@ return n;
 };
 
 if(action.type==='FILTER'){
-  const newItems=state.items.filter(item=>item.title.toLowerCase().includes(action.payload));
-const newSta=action.payload===''? state:{...state,items:newItems};
+  const newItems=state.items.filter(item=>item.title.toLowerCase().indexOf(action.payload.toLowerCase())!==-1);
+const newSta=action.payload===''? {...state}:{...state,items:newItems};
   return newSta;
 };
 
@@ -85,6 +85,13 @@ if(action.type==='INCREASE'){
 if(action.type==='CLEAR CART'){
   return {...state,cart:[],amount:0}
 }
+
+if(action.type==='GO BACK'){
+  return {...state, items: products,
+    cart:[],
+    amount:0}
+}
+
 
   return state;
 }

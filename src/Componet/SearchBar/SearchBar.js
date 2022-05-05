@@ -7,7 +7,7 @@ const SearchBar = () => {
     console.log(text);
   return (
  <div className="mb-3 mx-2 mt-3 row">
-    <div className="col-sm-10 col-lg-6">
+    <div className="col-sm-8 col-lg-6">
       <input type="text" placeholder='search items' onChange={(e)=>{
           setText(e.target.value);
           dispatch({type:'FILTER',payload:text});
@@ -20,6 +20,9 @@ const SearchBar = () => {
           }
         }} */
         className="form-control" />
+    </div>
+    <div className="col-sm-2 col-lg-2">
+    <button className='Btn' onClick={()=>dispatch({type:'GO BACK'} )}>Go Back</button>
     </div>
   </div>
   )
