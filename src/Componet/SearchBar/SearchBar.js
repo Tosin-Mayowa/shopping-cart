@@ -22,7 +22,7 @@ const SearchBar = () => {
         className="form-control" />
     </div>
     <div className="col-sm-2 col-lg-2">
-    <button className='Btn' onClick={()=>dispatch({type:'GO BACK'} )}>Go Back</button>
+    <button className='Btn rounded btn-primary mt-2 btn-sm' type='submit' onClick={()=>dispatch({type:'GO BACK'} )}>Go Back</button>
     </div>
   </div>
   )
