@@ -5,7 +5,7 @@ import './CartItem.css';
 import CartBtn from '../CartBtn/CartBtn';
 const CartItem = ({title,price,src,id,count}) => {
 const dispatch=useDispatch();
-const [qty,setQty]=useState(count)
+
 
   return (
     <>
