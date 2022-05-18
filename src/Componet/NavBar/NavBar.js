@@ -1,4 +1,5 @@
 import React from 'react';
+import './NavBar.css';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {FaShoppingCart} from 'react-icons/fa';
 import {useSelector} from 'react-redux';
@@ -10,6 +11,10 @@ const NavBar = () => {
   <div className="container-fluid">
     <Link className="navbar-brand" to='/'>Mayor</Link>
     <Link to='/cart' className="navbar-brand"><FaShoppingCart/>({cart.length})</Link>
+        <div className='anime'>
+       <div className='rotateD'></div>
+       <p className='appear'>Thank You For Shopping</p>
+        </div>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
@@ -23,7 +28,9 @@ const NavBar = () => {
   
         </li>
       </ul>
+          
     </div>
+    
   </div>
 </nav>
   )

@@ -36,21 +36,24 @@ const newSta=action.payload===''? {...state}:{...state,items:newItems};
 if(action.type==='DECREASE'){
   let newItems=state.items.map(item=>{
     if(item.id===action.payload.id){
-       let r=action.payload.count+1;
-      let newPrice=item.price*action.payload.count;
+      
+      let m = action.payload.counter - 1
+       let r=action.payload.counter;
+      let newPrice=item.price*m;
       let newest=newPrice/r;
 
-    return ({...item,price:action.payload===1?newPrice/2:newest,count:action.payload.count}); 
+    return ({...item,price:newest,count:m}); 
     }else{
       return item;
     }
   });
   let newCart=state.cart.map(c=>{
     if(c.id===action.payload.id){
-      let r=action.payload.count+1;
-      let newPrice=c.price*action.payload.count;
+      let m = action.payload.counter-1;
+      let r=action.payload.counter;
+      let newPrice=c.price*m;
       let newest=newPrice/r;
-      return {...c,price: newest,count:action.payload.count};
+      return {...c,price: newest,count:m};
     }else{
       return c;
     }
@@ -61,19 +64,21 @@ if(action.type==='DECREASE'){
 if(action.type==='INCREASE'){
   let newItems=state.items.map(item=>{
     if(item.id===action.payload.id){
-      let r=action.payload.count-1;
+      let m = action.payload.counter === 1 ? 2 : action.payload.counter; 
+      let r=m-1;
       let newPrice=item.price/r;
-    return ({...item,price:newPrice*action.payload.count,count:action.payload.count}); 
+    return ({...item,price:newPrice*m,count:m}); 
     }else{
       return item;
     }
   });
   let newCart=state.cart.map(c=>{
     if(c.id===action.payload.id){
-      let r=action.payload.count-1;
+      let m = action.payload.counter === 1 ? 2 : action.payload.counter; 
+      let r=m-1;
       let newPrice=c.price/r;
     
-      return {...c,price:newPrice*action.payload.count,count:action.payload.count};
+      return {...c,price:newPrice*m,count:m};
     }else{
       return c;
     }
@@ -83,11 +88,12 @@ if(action.type==='INCREASE'){
 }
 
 if(action.type==='CLEAR CART'){
-  return {...state,cart:[],amount:0}
+  console.log(products);
+  return { ...state, cart: [], amount: 0,items: products }
 }
 
 if(action.type==='GO BACK'){
-  return {...state, items: products,
+  return {...state,
     cart:[],
     amount:0}
 }

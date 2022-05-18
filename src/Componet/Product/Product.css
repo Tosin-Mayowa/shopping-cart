@@ -1,52 +1,69 @@
 .Product {
-	width: 170px;
-	padding: 10px;
-	margin: 1rem;
-	box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
-	text-align: center;
-	background-color: white;
-	border-radius: 10px;
-	transition: all ease 500ms;
+    width: 170px;
+    padding: 10px;
+    margin: 1rem;
+    box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    transform:scaleY(1);
+    transition-property:transform;
+    transition-duration:0.5s;
+    transition-delay:0.1s;
+    transition-timing-function: ease-in;
 }
 
 .Pokecard-data {
-	font-size: 80%;
+    font-size: 80%;
 }
 
 .Product-title {
-	margin-bottom: 1rem;
-	font-weight: bold;
-	font-size: 0.8rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 0.8rem;
 }
 
 .Pokecard-image {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 250px;
-	background-color: #eceff1;
-	border-radius: 3px;
-	margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    background-color: #eceff1;
+    border-radius: 3px;
+    margin-bottom: 1rem;
 }
-.Pokecard img {
-	transition: all ease 500ms;
-}
-.Product:hover {
-	transform: scale(1.25);
-	opacity: 0.7;
-}
-.Btn {
-	font-size: 10px;
-	font-weight: 500;
-}
-@media(max-width:768px) {
-	.Product{
-		width: 120px;
-	}
 
-	.Product-title {
-	margin-bottom: 1rem;
-	font-weight: bold;
-	font-size: 15px;
+.Pokecard img {
+    transition: all ease 500ms;
 }
+
+.Product:hover {
+    transform: scale(1.15);
+    opacity: 0.7;
 }
+
+.Btn-change {
+    font-size: 10px;
+    font-weight: 500;
+    border: 2px solid #000;
+    border-radius: 20px 0;
+}
+
+.Btn {
+    font-size: 10px;
+    font-weight: 500;
+    border: 2px solid #000;
+    border-radius: 50px;
+    margin: 0 auto;
+}
+    @media(max-width:768px) {
+        .Product {
+            width: 120px;
+        }
+
+        .Product-title {
+            margin-bottom: 1rem;
+            font-weight: bold;
+            font-size: 15px;
+        }
+    }
