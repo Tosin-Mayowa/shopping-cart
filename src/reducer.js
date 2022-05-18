@@ -88,7 +88,7 @@ if(action.type==='INCREASE'){
 }
 
 if(action.type==='CLEAR CART'){
-  console.log(products);
+  
   return { ...state, cart: [], amount: 0,items: products }
 }
 
